@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.3'
 	id 'io.spring.dependency-management' version '1.1.6'
-	id "com.google.protobuf" version "0.9.4"
+	//id "com.google.protobuf" version "0.9.4"
 
 }
 
@@ -14,12 +14,14 @@ java {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
+/*
 protobuf {
 	protoc {
 		// Path to the installed protoc binary
-		path = "/src/main/java"
+		path = "/src/main/proto"
 	}
 }
+*/
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -29,13 +31,13 @@ configurations {
 repositories {
 	mavenCentral()
 }
-protobuf {
+/*protobuf {
 	protoc {
 		artifact = 'com.google.protobuf:protoc:3.21.4' // Choose the appropriate version
 	}
 	plugins {
 		grpc {
-			artifact = 'io.grpc:protoc-gen-grpc-java:1.43.0' // If you're using gRPC
+			artifact = 'io.grpc:protoc-gen-grpc-java:1.66.0' // If you're using gRPC
 		}
 	}
 	generateProtoTasks {
@@ -46,17 +48,20 @@ protobuf {
 		}
 	}
 }
-
+*/
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-batch'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'com.google.protobuf:protobuf-java:4.28.0'
+	//implementation 'com.google.protobuf:protobuf-java:4.28.0'
+	//implementation 'io.grpc:grpc-stub:1.66.0'
+	//implementation 'net.devh:grpc-server-spring-boot-starter:3.1.0.RELEASE'
 	implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
+	implementation 'mysql:mysql-connector-java:8.0.32'
+
 
 	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.batch:spring-batch-test'
@@ -67,4 +72,4 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-apply plugin: 'com.google.protobuf'
+//apply plugin: 'com.google.protobuf'
