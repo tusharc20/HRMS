@@ -1,23 +1,21 @@
 package com.avaloq.springbatch.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Generated;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "employee_info")
 @Getter @Setter @AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
 
-    @Column(name = "employee_id")
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int employeeId;
+    @Id
+    @Column(name = "EmployeeID")
+    private String employeeID;
     @Column(name = "email")
     private String email;
-    @Column(name = "emp_name")
-    private String empName;
+    @Column(name = "name")
+    private String name;
     @Column(name = "position")
     private String position;
 

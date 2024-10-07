@@ -1,10 +1,10 @@
 package com.avaloq.springbatch;
 
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication @EnableBatchProcessing
+@SpringBootApplication
 public class SpringbatchdemoApplication {
 
 	public static void main(String[] args) {
